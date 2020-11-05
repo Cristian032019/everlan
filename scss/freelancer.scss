@@ -1,0 +1,25 @@
+@function masthead-heading($numero, $color) {
+  $text-shadow: 2px 2px darken($color,20%) ;
+  @for $i from 1 through $numero {
+    $text-shadow: "#{$text-shadow},#{$i}px #{$i}px #{$color}";
+  }
+  @return unquote($text-shadow);
+}
+
+/*body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: darken(steelblue,15%);
+}
+*/
+.masthead-heading {
+  font-size: 5em;
+  color: #eee;
+  text-shadow: masthead-heading(10,#222);
+  /*transform: rotate(-6deg);*/
+}
